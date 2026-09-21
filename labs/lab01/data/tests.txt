@@ -25,3 +25,31 @@ n 41
 a 15
 b 29
 key 27
+
+# Test case 5
+g 5
+n 23
+a 3
+b 7
+key 14
+
+# Test case 6
+g 2
+n 17
+a 5
+b 9
+key 15
+
+# Test case 7
+g 7
+n 31
+a 4
+b 11
+key 9
+
+# Test case 8
+g 3
+n 19
+a 6
+b 8
+key 11
