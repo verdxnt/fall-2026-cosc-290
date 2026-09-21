@@ -43,6 +43,27 @@ def read_test_cases(path: str) -> list[TestCase]:
             current_group = []
 
     return test_cases
+def fast_mod(x, y, m):
+    results = 1
+    current = x % m #remainder for x^1 mod m
+    numBits = bin(y)[2:]
+
+    for bit in reversed(numBits):
+        if bit == "1":
+            results = (results * current) % m
+        current = (current * current) % m
+    return results % m
+
+def get_shared_key(g, n, a, b):
+    A = fast_mod(g, a, n)
+    B = fast_mod(g, b, n)
+
+    key1 = fast_mod(B, a, n)
+    key2 = fast_mod(A, b, n)
+
+    if key1 == key2:
+        return key1
+        
 
 def main() -> None:
     if len(sys.argv) != 2:
@@ -66,6 +87,10 @@ def main() -> None:
         print(f"  a   = {tc.a}")
         print(f"  b   = {tc.b}")
         print(f"  key = {tc.key}")
+
+        calculated_key = get_shared_key(tc.g, tc.n, tc.a, tc.b)
+        print(f"  calculated key = {calculated_key}")
+        
         print()
 
 main()

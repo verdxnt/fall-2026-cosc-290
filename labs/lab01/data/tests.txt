@@ -18,3 +18,10 @@ n 83
 a 14
 b 22
 key 29
+
+#test case 4
+g 13
+n 41 
+a 15
+b 29
+key 27
